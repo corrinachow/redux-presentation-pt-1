@@ -67,7 +67,6 @@ export default class Presentation extends React.Component {
         </button>
       );
     };`;
-    debugger;
     return (
       <Deck
         transition={["zoom", "slide"]}
