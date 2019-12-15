@@ -1,0 +1,16 @@
+const Button = () => {
+  const [color, setColor] = React.useState("red");
+
+  function handleClick() {
+    return color === "red" ? "blue" : "red";
+  }
+
+  return (
+    <button
+      class={color}
+      onClick={() => setColor(color === "red" ? "blue" : "red")}
+    >
+      <span> Click me</span>
+    </button>
+  );
+};

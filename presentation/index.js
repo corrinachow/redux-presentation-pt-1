@@ -50,23 +50,6 @@ const theme = createTheme(
 
 export default class Presentation extends React.Component {
   render() {
-    const code = `
-    const Button = () => {
-      const [color, setColor] = React.useState("red");
-    
-      function handleClick() {
-        return color === "red" ? "blue" : "red";
-      }
-    
-      return (
-        <button
-          class={color}
-          onClick={() => setColor(color === "red" ? "blue" : "red")}
-        >
-          <span> Click me</span>
-        </button>
-      );
-    };`;
     return (
       <Deck
         transition={["zoom", "slide"]}
@@ -74,22 +57,7 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
         {Slides}
-        <Slide transition={["zoom"]} bgColor="surfaceColor">
-          <Layout>
-            <Fill>
-              <Heading size={6} textColor="primary" caps>
-                Declarative
-              </Heading>
-              <CodePane source={code} lang="javascript"></CodePane>
-            </Fill>
-            <Fill>
-              <Heading size={6} textColor="primary" caps>
-                Imperative
-              </Heading>
-              <CodePane source={code} lang="javascript"></CodePane>
-            </Fill>
-          </Layout>
-        </Slide>
+
         <Slide bgColor="surfaceColor">
           <Image src={images.formidagon} width={800} />
         </Slide>
@@ -137,7 +105,7 @@ export default class Presentation extends React.Component {
             <Cite margin="10px 0 0 30px">Author</Cite>
           </BlockQuote>
         </Slide>
-        <Slide>
+        <Slide bgColor="surfaceColor">
           <Image src={images.goodWork} width={500} />
           <Notes>gifs work too</Notes>
         </Slide>
