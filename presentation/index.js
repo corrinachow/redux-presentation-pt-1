@@ -39,7 +39,7 @@ const theme = createTheme(
   {
     primary: "#BB86FC",
     primaryVariant: "#3700B3",
-    Secondary: "#03DAC6",
+    secondary: "#03DAC6",
     surfaceColor: "#121212"
   },
   {

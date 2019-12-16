@@ -1,0 +1,7 @@
+action-creators.example// Action creators: functions that return an action
+function addTodo(text) {
+  return {
+    type: "ADD_TODO",
+    text
+  };
+}

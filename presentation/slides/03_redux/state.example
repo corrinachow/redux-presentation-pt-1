@@ -1,0 +1,11 @@
+// App state: a plain object with many keys or "slices"
+{
+    todos: [{
+        text: 'Eat food',
+        completed: true
+    }, {
+        text: 'Exercise',
+        completed: false
+    }],
+    visibilityFilter : 'SHOW_COMPLETED'
+}
