@@ -21,12 +21,8 @@ import {
   Horizontal
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
 
 import notes from "./notes";
-
-import { TodoApp, todoAppReducers } from "../../../assets/todoApp.jsx";
 
 import stateExample from "raw-loader!./state.example";
 import actionExample from "raw-loader!./action.example";
@@ -265,9 +261,5 @@ function reducerSlide() {
 }
 
 function reduxExampleSlide() {
-  <Slide>
-    <Provider store={createStore(todoAppReducers)}>
-      <TodoApp />
-    </Provider>
-  </Slide>;
+  return <Slide bgColor="surfaceColor" textColor="primary"></Slide>;
 }
