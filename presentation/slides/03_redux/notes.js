@@ -5,19 +5,20 @@ import reduxNotes from "./redux-intro.md";
 // import declativeImperativeComponentNotes from "./imperative-declarative-comparison.md";
 // import declarativeButtonDemoNotes from "./declarative-button-demo.md";
 import predictacleCentralisedNotes from "./predictable-centralised.md";
+import reducerNotes from "./reducer.md";
+import stateNotes from "./state.md";
+import actionNotes from "./action.md";
 
 const reduxIntro = <Notes>{reduxNotes}</Notes>;
-
-// const declarativeComponent = <Notes>{declarativeComponentNotes}</Notes>;
-
-// const imperativeDeclarative = (
-//   <Notes>{declativeImperativeComponentNotes}</Notes>
-// );
-
-// const declarativeButtonDemo = <Notes>{declarativeButtonDemoNotes}</Notes>;
 const predictacleCentralised = <Notes>{predictacleCentralisedNotes}</Notes>;
+const action = <Notes>{actionNotes}</Notes>;
+const state = <Notes>{stateNotes}</Notes>;
+const reducer = <Notes>{reducerNotes}</Notes>;
 
 export default {
   reduxIntro,
-  predictacleCentralised
+  predictacleCentralised,
+  reducer,
+  state,
+  action
 };

@@ -124,9 +124,8 @@ function declarativeButtonWalkthroughSlide() {
     <CodeSlide
       padding="0 1rem"
       code={declarativeExample}
-      textColor="black"
       textSize="2rem"
-      lang="js"
+      lang="javascript"
       ranges={[
         { loc: [0, 1], title: "Stateful Button" },
         { loc: [1, 2], note: "Initialises state" },

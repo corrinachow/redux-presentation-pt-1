@@ -57,7 +57,6 @@ export default class Presentation extends React.Component {
         theme={theme}
       >
         {Slides}
-
         <Slide bgColor="surfaceColor">
           <Image src={images.formidagon} width={800} />
         </Slide>

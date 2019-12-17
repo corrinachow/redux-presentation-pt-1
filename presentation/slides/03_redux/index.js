@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Appear,
   BlockQuote,
   Cite,
   Deck,
@@ -16,20 +17,23 @@ import {
   Quote,
   Slide,
   Text,
-  CodePane
+  CodePane,
+  Horizontal
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
 import notes from "./notes";
 
-import Button from "../../../assets/button";
+import { TodoApp, todoAppReducers } from "../../../assets/todoApp.jsx";
 
-import declarativeExample from "raw-loader!./declarative.example";
-import imperativeExample from "raw-loader!./imperative.example";
+import stateExample from "raw-loader!./state.example";
+import actionExample from "raw-loader!./action.example";
+import actionCreatorExample from "raw-loader!./action-creator.example";
+import reducerExample from "raw-loader!./reducer.example";
 
-const images = {
-  mvcDiagram: require("./../../../assets/mvc-diagram.png")
-};
+const images = {};
 
 export default [
   <Slide bgColor="surfaceColor" textColor="primary">
@@ -46,7 +50,11 @@ export default [
       </Cite>
     </BlockQuote>
   </Slide>,
-  predictableCentralisedSlide()
+  predictableCentralisedSlide(),
+  stateSlide(),
+  actionSlide(),
+  reducerSlide(),
+  reduxExampleSlide()
 
   // MVCSlide(),
   // imperativeDeclarativeSlide(),
@@ -187,4 +195,79 @@ function predictableCentralisedSlide() {
       </List>
     </Slide>
   );
+}
+
+function stateSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.state}
+      <Heading size={6} textColor="primary">
+        State
+      </Heading>
+      <CodePane
+        padding="0 1rem 0 0"
+        textSize="1.5rem"
+        source={stateExample}
+        lang="javascript"
+      ></CodePane>
+    </Slide>
+  );
+}
+
+function actionSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.action}
+      <div>
+        <Heading size={6} textColor="primary">
+          Action
+        </Heading>
+        <CodePane
+          textSize="1.5rem"
+          padding="0 0 1rem 0"
+          source={actionExample}
+          lang="javascript"
+        />
+      </div>
+
+      <Appear>
+        <div>
+          <Heading size={6} textColor="primary">
+            Action Creator
+          </Heading>
+          <CodePane
+            textSize="1.5rem"
+            padding="0 0 1rem 0"
+            source={actionCreatorExample}
+            lang="javascript"
+          />
+        </div>
+      </Appear>
+    </Slide>
+  );
+}
+
+function reducerSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.reducer}
+      <Heading size={6} textColor="primary">
+        Reducer
+      </Heading>
+      <CodePane
+        textSize="1rem"
+        padding="0 0 1rem 0"
+        source={reducerExample}
+        lang="javascript"
+      ></CodePane>
+    </Slide>
+  );
+}
+
+function reduxExampleSlide() {
+  <Slide>
+    <Provider store={createStore(todoAppReducers)}>
+      <TodoApp />
+    </Provider>
+  </Slide>;
 }
