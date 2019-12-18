@@ -28,6 +28,7 @@ import stateExample from "raw-loader!./state.example";
 import actionExample from "raw-loader!./action.example";
 import actionCreatorExample from "raw-loader!./action-creator.example";
 import reducerExample from "raw-loader!./reducer.example";
+import storeExample from "raw-loader!./store.example";
 
 const images = {};
 
@@ -50,6 +51,8 @@ export default [
   stateSlide(),
   actionSlide(),
   reducerSlide(),
+  storeSlide(),
+  reduxMainMethodsSlide(),
   reduxExampleSlide()
 
   // MVCSlide(),
@@ -255,11 +258,89 @@ function reducerSlide() {
         padding="0 0 1rem 0"
         source={reducerExample}
         lang="javascript"
-      ></CodePane>
+      />
+    </Slide>
+  );
+}
+
+function storeSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.store}
+      <Heading size={6} textColor="primary">
+        Store
+      </Heading>
+      <CodePane
+        textSize="1.5rem"
+        padding="0 0 1rem 0"
+        source={storeExample}
+        lang="javascript"
+      />
+    </Slide>
+  );
+}
+
+function reduxMainMethodsSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.action}
+      <Heading size={6} textColor="primary">
+        Stores have 3 main methods:
+      </Heading>
+      <>
+        <Appear>
+          <div>
+            <Heading size={6} textColor="primary">
+              dispatch 🚀
+            </Heading>
+            <CodePane
+              textSize="1.5rem"
+              padding="0 0 1rem 0"
+              source={`store.dispatch({ type: "ADD_TODO", text: "Go to swimming pool" });`}
+              lang="javascript"
+            />
+          </div>
+        </Appear>
+        <Appear>
+          <div>
+            <Heading size={6} textColor="primary">
+              getState 🔮
+            </Heading>
+            <CodePane
+              textSize="1.5rem"
+              padding="0 0 1rem 0"
+              source={`const stateBefore = store.getState();`}
+              lang="javascript"
+            />
+          </div>
+        </Appear>
+        <Appear>
+          <div>
+            <Heading size={6} textColor="primary">
+              subscribe 📰
+            </Heading>
+            <CodePane
+              textSize="1.5rem"
+              padding="0 0 1rem 0"
+              source={`store.subscribe(() => { // Callback });`}
+              lang="javascript"
+            />
+          </div>
+        </Appear>
+      </>
     </Slide>
   );
 }
 
 function reduxExampleSlide() {
-  return <Slide bgColor="surfaceColor" textColor="primary"></Slide>;
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      <Link
+        textColor="secondary"
+        href="https://codesandbox.io/s/strange-rgb-vbe99"
+      >
+        To Do App Example 🔗
+      </Link>
+    </Slide>
+  );
 }
