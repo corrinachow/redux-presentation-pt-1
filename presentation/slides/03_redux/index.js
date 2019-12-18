@@ -332,6 +332,31 @@ function reduxMainMethodsSlide() {
   );
 }
 
+function reactReduxSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      <Heading size={6} textColor="primary">
+        Using Redux with React
+      </Heading>
+      <List>
+        <ListItem textSize="1.5rem">
+          Redux can be used with any UI layer (Angular, Vue, or plain JS)
+        </ListItem>
+        <ListItem textSize="1.5rem">{`connect()`} function</ListItem>
+        <ListItem textSize="1.5rem">{`<Provider>`} component</ListItem>
+      </List>
+      <CodePane
+        textSize="1.5rem"
+        padding="0 0 1rem 0"
+        source={`<Provider store={store}>
+                  <App />
+                </Provider>`}
+        lang="javascript"
+      />
+    </Slide>
+  );
+}
+
 function reduxExampleSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
