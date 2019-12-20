@@ -10,6 +10,9 @@ import stateNotes from "./state.md";
 import actionNotes from "./action.md";
 import storeNotes from "./store.md";
 import storeMethodsNotes from "./store-methods.md";
+import reduxConnectNotes from "./redux-connect.md";
+import reduxProviderNotes from "./redux-provider.md";
+import thunkNotes from "./thunk.md";
 
 const reduxIntro = <Notes>{reduxNotes}</Notes>;
 const predictacleCentralised = <Notes>{predictacleCentralisedNotes}</Notes>;
@@ -18,6 +21,9 @@ const state = <Notes>{stateNotes}</Notes>;
 const reducer = <Notes>{reducerNotes}</Notes>;
 const store = <Notes>{storeNotes}</Notes>;
 const storeMethods = <Notes>{storeMethodsNotes}</Notes>;
+const reduxConnect = <Notes>{reduxConnectNotes}</Notes>;
+const reduxProvider = <Notes>{reduxProviderNotes}</Notes>;
+const thunk = <Notes>{thunkNotes}</Notes>;
 
 export default {
   reduxIntro,
@@ -26,5 +32,8 @@ export default {
   state,
   action,
   store,
-  storeMethods
+  storeMethods,
+  reduxConnect,
+  reduxProvider,
+  thunk
 };

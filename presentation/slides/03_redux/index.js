@@ -29,6 +29,8 @@ import actionExample from "raw-loader!./action.example";
 import actionCreatorExample from "raw-loader!./action-creator.example";
 import reducerExample from "raw-loader!./reducer.example";
 import storeExample from "raw-loader!./store.example";
+import connectExample from "raw-loader!./connect.example";
+import providerExample from "raw-loader!./provider.example";
 
 const images = {};
 
@@ -53,13 +55,9 @@ export default [
   reducerSlide(),
   storeSlide(),
   reduxMainMethodsSlide(),
+  reduxConnectSlide(),
+  reduxProviderSlide(),
   reduxExampleSlide()
-
-  // MVCSlide(),
-  // imperativeDeclarativeSlide(),
-  // declarativeButtonWalkthroughSlide(),
-  // declarativeButtonDemoSlide(),
-  // reactSummarySlide()
 ];
 
 function renderReduxLogo() {
@@ -70,105 +68,6 @@ function renderReduxLogo() {
     />
   );
 }
-
-// function MVCSlide() {
-//   return (
-//     <Slide bgColor="white" textColor="primary">
-//       {notes.declarativeComponent}
-//       <Heading size={6} textColor="primaryVariant">
-//         React
-//         {renderReactLogo()}
-//       </Heading>
-//       <Layout>
-//         <Fill>
-//           <Image height="350px" src={images.mvcDiagram} />
-//         </Fill>
-//         <Fill>
-//           <List textColor="primaryVariant">
-//             <ListItem>"V" in MVC</ListItem>
-//             <ListItem>Declarative</ListItem>
-//             <ListItem>Component based</ListItem>
-//           </List>
-//         </Fill>
-//       </Layout>
-//     </Slide>
-//   );
-// }
-
-// function imperativeDeclarativeSlide() {
-//   return (
-//     <Slide bgColor="surfaceColor">
-//       {notes.imperativeDeclarative}
-//       <Layout>
-//         <Fill>
-//           <Heading size={6} textColor="primary">
-//             Imperative
-//           </Heading>
-//           <CodePane
-//             padding="0 1rem 0 0"
-//             textSize="1.5rem"
-//             source={imperativeExample}
-//             lang="javascript"
-//           ></CodePane>
-//         </Fill>
-
-//         <Fill>
-//           <Heading size={6} textColor="primary">
-//             Declarative
-//           </Heading>
-//           <CodePane
-//             textSize="1.5rem"
-//             padding="0 0 1rem 0"
-//             source={declarativeExample}
-//             lang="javascript"
-//           ></CodePane>
-//         </Fill>
-//       </Layout>
-//     </Slide>
-//   );
-// }
-
-// function declarativeButtonWalkthroughSlide() {
-//   return (
-//     <CodeSlide
-//       padding="0 1rem"
-//       code={declarativeExample}
-//       textColor="black"
-//       textSize="2rem"
-//       lang="js"
-//       ranges={[
-//         { loc: [0, 1], title: "Stateful Button" },
-//         { loc: [1, 2], note: "Initialises state" },
-//         { loc: [5, 6], note: "Displays current colour" },
-//         {
-//           loc: [6, 7],
-//           note: "Sets an onClick event to toggle between colours"
-//         }
-//       ]}
-//     />
-//   );
-// }
-
-// function declarativeButtonDemoSlide() {
-//   return (
-//     <Slide bgColor="surfaceColor" textColor="primary">
-//       {notes.declarativeButtonDemo}
-//       <Button />
-//       <CodePane
-//         textSize="1.5rem"
-//         margin="5rem 0 5rem 0"
-//         source={declarativeExample}
-//         lang="javascript"
-//       />
-//       <Link
-//         textColor="secondary"
-//         href="https://codepen.io/corrinachow/pen/xxbOKxL"
-//       >
-//         CodePen 🔗
-//       </Link>
-//     </Slide>
-//   );
-// }
 
 function predictableCentralisedSlide() {
   return (
@@ -287,6 +186,7 @@ function reduxMainMethodsSlide() {
       <Heading size={6} textColor="primary">
         Stores have 3 main methods:
       </Heading>
+      <br />
       <>
         <Appear>
           <div>
@@ -332,25 +232,63 @@ function reduxMainMethodsSlide() {
   );
 }
 
-function reactReduxSlide() {
+function reduxConnectSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.reduxConnect}
       <Heading size={6} textColor="primary">
         Using Redux with React
       </Heading>
-      <List>
-        <ListItem textSize="1.5rem">
-          Redux can be used with any UI layer (Angular, Vue, or plain JS)
-        </ListItem>
-        <ListItem textSize="1.5rem">{`connect()`} function</ListItem>
-        <ListItem textSize="1.5rem">{`<Provider>`} component</ListItem>
-      </List>
+      <br />
+      <Code textSize="2rem" textColor="secondary">
+        {"connect()"}
+      </Code>
+
+      <CodePane
+        textSize="1rem"
+        padding="1rem 0 1rem 0"
+        source={connectExample}
+        lang="javascript"
+      />
+    </Slide>
+  );
+}
+function reduxProviderSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.reduxProvider}
+      <Heading size={6} textColor="primary">
+        Using Redux with React
+      </Heading>
+      <br />
+      <Code textSize="2rem" textColor="secondary">
+        {"<Provider>"}
+      </Code>
       <CodePane
         textSize="1.5rem"
-        padding="0 0 1rem 0"
-        source={`<Provider store={store}>
-                  <App />
-                </Provider>`}
+        padding="1rem 0 1rem 0"
+        source={providerExample}
+        lang="javascript"
+      />
+    </Slide>
+  );
+}
+
+function reduxSideEffectsSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.reduxProvider}
+      <Heading size={6} textColor="primary">
+        Using Redux with React
+      </Heading>
+      <br />
+      <Code textSize="2rem" textColor="secondary">
+        {"<Provider>"}
+      </Code>
+      <CodePane
+        textSize="1.5rem"
+        padding="1rem 0 1rem 0"
+        source={providerExample}
         lang="javascript"
       />
     </Slide>
