@@ -7,6 +7,7 @@ import stateNotes from "./notes/state.md";
 import actionNotes from "./notes/action.md";
 import storeNotes from "./notes/store.md";
 import storeMethodsNotes from "./notes/store-methods.md";
+import reduxUseSelectorNotes from "./notes/redux-useSelector.md";
 import reduxConnectNotes from "./notes/redux-connect.md";
 import reduxProviderNotes from "./notes/redux-provider.md";
 import thunkNotes from "./notes/thunk.md";
@@ -19,6 +20,7 @@ const reducer = <Notes>{reducerNotes}</Notes>;
 const store = <Notes>{storeNotes}</Notes>;
 const storeMethods = <Notes>{storeMethodsNotes}</Notes>;
 const reduxConnect = <Notes>{reduxConnectNotes}</Notes>;
+const reduxUseSelector = <Notes>{reduxUseSelectorNotes}</Notes>;
 const reduxProvider = <Notes>{reduxProviderNotes}</Notes>;
 const thunk = <Notes>{thunkNotes}</Notes>;
 
@@ -30,6 +32,7 @@ export default {
   action,
   store,
   storeMethods,
+  reduxUseSelector,
   reduxConnect,
   reduxProvider,
   thunk

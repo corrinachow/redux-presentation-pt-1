@@ -1,36 +1,27 @@
+import actionCreatorExample from "raw-loader!./examples/action-creator.example";
+import actionExample from "raw-loader!./examples/action.example";
+import connectExample from "raw-loader!./examples/connect.example";
+import providerExample from "raw-loader!./examples/provider.example";
+import reducerExample from "raw-loader!./examples/reducer.example";
+import stateExample from "raw-loader!./examples/state.example";
+import storeExample from "raw-loader!./examples/store.example";
+import useSelectorExample from "raw-loader!./examples/useSelector.example";
 import React from "react";
 import {
   Appear,
   BlockQuote,
   Cite,
-  Deck,
   Code,
-  Heading,
-  Fit,
-  Fill,
-  Image,
-  List,
-  Link,
-  ListItem,
-  Layout,
-  Notes,
-  Quote,
-  Slide,
-  Text,
   CodePane,
-  Horizontal
+  Heading,
+  Image,
+  Link,
+  List,
+  ListItem,
+  Quote,
+  Slide
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
-
 import notes from "./notes";
-
-import stateExample from "raw-loader!./examples/state.example";
-import actionExample from "raw-loader!./examples/action.example";
-import actionCreatorExample from "raw-loader!./examples/action-creator.example";
-import reducerExample from "raw-loader!./examples/reducer.example";
-import storeExample from "raw-loader!./examples/store.example";
-import connectExample from "raw-loader!./examples/connect.example";
-import providerExample from "raw-loader!./examples/provider.example";
 
 const images = {};
 
@@ -55,8 +46,8 @@ export default [
   reducerSlide(),
   storeSlide(),
   reduxMainMethodsSlide(),
-  reduxConnectSlide(),
   reduxProviderSlide(),
+  reduxUseSelectorSlide(),
   reduxCounterExampleSlide()
 ];
 
@@ -235,19 +226,19 @@ function reduxMainMethodsSlide() {
 function reduxUseSelectorSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
-      {notes.reduxConnect}
+      {notes.reduxUseSelector}
       <Heading size={6} textColor="primary">
         Using Redux with React
       </Heading>
       <br />
       <Code textSize="2rem" textColor="secondary">
-        {"connect()"}
+        {"useSelector()"}
       </Code>
 
       <CodePane
         textSize="1rem"
         padding="1rem 0 1rem 0"
-        source={connectExample}
+        source={useSelectorExample}
         lang="javascript"
       />
     </Slide>
