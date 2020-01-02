@@ -10,7 +10,8 @@ import storeMethodsNotes from "./notes/store-methods.md";
 import reduxUseSelectorNotes from "./notes/redux-useSelector.md";
 import reduxConnectNotes from "./notes/redux-connect.md";
 import reduxProviderNotes from "./notes/redux-provider.md";
-import thunkNotes from "./notes/thunk.md";
+import synchronousNotes from "./notes/redux-synchronous.md";
+import thunkNotes from "./notes/redux-thunk.md";
 
 const reduxIntro = <Notes>{reduxNotes}</Notes>;
 const predictacleCentralised = <Notes>{predictacleCentralisedNotes}</Notes>;
@@ -22,6 +23,7 @@ const storeMethods = <Notes>{storeMethodsNotes}</Notes>;
 const reduxConnect = <Notes>{reduxConnectNotes}</Notes>;
 const reduxUseSelector = <Notes>{reduxUseSelectorNotes}</Notes>;
 const reduxProvider = <Notes>{reduxProviderNotes}</Notes>;
+const synchronous = <Notes>{synchronousNotes}</Notes>;
 const thunk = <Notes>{thunkNotes}</Notes>;
 
 export default {
@@ -35,5 +37,6 @@ export default {
   reduxUseSelector,
   reduxConnect,
   reduxProvider,
+  synchronous,
   thunk
 };

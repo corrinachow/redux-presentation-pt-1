@@ -1,31 +1,23 @@
+import declarativeExample from "raw-loader!./declarative.example";
+import imperativeExample from "raw-loader!./imperative.example";
 import React from "react";
 import {
   BlockQuote,
   Cite,
-  Deck,
-  Code,
-  Heading,
-  Fit,
+  CodePane,
   Fill,
+  Heading,
   Image,
-  List,
-  Link,
-  ListItem,
   Layout,
-  Notes,
+  Link,
+  List,
+  ListItem,
   Quote,
-  Slide,
-  Text,
-  CodePane
+  Slide
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
-
-import notes from "./notes";
-
 import Button from "../../../assets/button";
-
-import declarativeExample from "raw-loader!./declarative.example";
-import imperativeExample from "raw-loader!./imperative.example";
+import notes from "./notes";
 
 const images = {
   mvcDiagram: require("./../../../assets/mvc-diagram.png")

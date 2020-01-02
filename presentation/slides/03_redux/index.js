@@ -13,8 +13,11 @@ import {
   Cite,
   Code,
   CodePane,
+  Fill,
+  Fit,
   Heading,
   Image,
+  Layout,
   Link,
   List,
   ListItem,
@@ -23,7 +26,10 @@ import {
 } from "spectacle";
 import notes from "./notes";
 
-const images = {};
+const images = {
+  synchronousFlow: require("./../../../assets/redux-flow.gif"),
+  asyncFlow: require("./../../../assets/redux-side-effects-flow.gif")
+};
 
 export default [
   <Slide bgColor="surfaceColor" textColor="primary">
@@ -48,7 +54,10 @@ export default [
   reduxMainMethodsSlide(),
   reduxProviderSlide(),
   reduxUseSelectorSlide(),
-  reduxCounterExampleSlide()
+  reduxCounterExampleSlide(),
+  reduxSynchronousSlide(),
+  reduxSideEffectsSlide(),
+  reduxAsynchronousSlide()
 ];
 
 function renderReduxLogo() {
@@ -231,7 +240,7 @@ function reduxUseSelectorSlide() {
         Using Redux with React
       </Heading>
       <br />
-      <Code textSize="2rem" textColor="secondary">
+      <Code textSize="3rem" textColor="secondary">
         {"useSelector()"}
       </Code>
 
@@ -253,7 +262,7 @@ function reduxConnectSlide() {
         Using Redux with React
       </Heading>
       <br />
-      <Code textSize="2rem" textColor="secondary">
+      <Code textSize="3rem" textColor="secondary">
         {"connect()"}
       </Code>
 
@@ -275,7 +284,7 @@ function reduxProviderSlide() {
         Using Redux with React
       </Heading>
       <br />
-      <Code textSize="2rem" textColor="secondary">
+      <Code textSize="3rem" textColor="secondary">
         {"<Provider>"}
       </Code>
       <CodePane
@@ -288,23 +297,68 @@ function reduxProviderSlide() {
   );
 }
 
+function reduxSynchronousSlide() {
+  return (
+    <Slide bgColor="#eee" textColor="primary">
+      {notes.synchronousNotes}
+      <Heading size={6} textColor="primaryVariant">
+        Redux Synchronous Flow
+      </Heading>
+      <Layout>
+        <Fill>
+          <Image height="350px" src={images.synchronousFlow} />
+        </Fill>
+        <Fill>
+          <List textColor="primaryVariant">
+            <ListItem>Actions are dispatched synchronously by default</ListItem>
+          </List>
+        </Fill>
+      </Layout>
+    </Slide>
+  );
+}
+
+function reduxAsynchronousSlide() {
+  return (
+    <Slide bgColor="#eee" textColor="primary">
+      {notes.asyncFlow}
+      <Heading size={6} textColor="primaryVariant">
+        Redux Asynchronous Flow
+      </Heading>
+      <Layout>
+        <Fill>
+          <Image height="350px" src={images.asyncFlow} />
+        </Fill>
+        <Fill>
+          <List textColor="primaryVariant">
+            <ListItem>Actions are dispatched synchronously by default</ListItem>
+          </List>
+        </Fill>
+      </Layout>
+    </Slide>
+  );
+}
+
 function reduxSideEffectsSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
-      {notes.reduxProvider}
-      <Heading size={6} textColor="primary">
-        Using Redux with React
+      {notes.declarativeComponent}
+      <Heading size={6} textColor="primaryVariant">
+        React
+        {renderReactLogo()}
       </Heading>
-      <br />
-      <Code textSize="2rem" textColor="secondary">
-        {"<Provider>"}
-      </Code>
-      <CodePane
-        textSize="1.5rem"
-        padding="1rem 0 1rem 0"
-        source={providerExample}
-        lang="javascript"
-      />
+      <Layout>
+        <Fill>
+          <Image height="350px" src={images.mvcDiagram} />
+        </Fill>
+        <Fill>
+          <List textColor="primaryVariant">
+            <ListItem>"V" in MVC</ListItem>
+            <ListItem>Declarative</ListItem>
+            <ListItem>Component based</ListItem>
+          </List>
+        </Fill>
+      </Layout>
     </Slide>
   );
 }
@@ -325,6 +379,7 @@ function reduxCounterExampleSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
       <Link
+        textSize="3rem"
         textColor="secondary"
         href="https://codesandbox.io/s/redux-counter-hooks-urtpe"
       >
