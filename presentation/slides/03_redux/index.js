@@ -24,13 +24,13 @@ import CodeSlide from "spectacle-code-slide";
 
 import notes from "./notes";
 
-import stateExample from "raw-loader!./state.example";
-import actionExample from "raw-loader!./action.example";
-import actionCreatorExample from "raw-loader!./action-creator.example";
-import reducerExample from "raw-loader!./reducer.example";
-import storeExample from "raw-loader!./store.example";
-import connectExample from "raw-loader!./connect.example";
-import providerExample from "raw-loader!./provider.example";
+import stateExample from "raw-loader!./examples/state.example";
+import actionExample from "raw-loader!./examples/action.example";
+import actionCreatorExample from "raw-loader!./examples/action-creator.example";
+import reducerExample from "raw-loader!./examples/reducer.example";
+import storeExample from "raw-loader!./examples/store.example";
+import connectExample from "raw-loader!./examples/connect.example";
+import providerExample from "raw-loader!./examples/provider.example";
 
 const images = {};
 
@@ -57,7 +57,7 @@ export default [
   reduxMainMethodsSlide(),
   reduxConnectSlide(),
   reduxProviderSlide(),
-  reduxExampleSlide()
+  reduxCounterExampleSlide()
 ];
 
 function renderReduxLogo() {
@@ -232,6 +232,28 @@ function reduxMainMethodsSlide() {
   );
 }
 
+function reduxUseSelectorSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {notes.reduxConnect}
+      <Heading size={6} textColor="primary">
+        Using Redux with React
+      </Heading>
+      <br />
+      <Code textSize="2rem" textColor="secondary">
+        {"connect()"}
+      </Code>
+
+      <CodePane
+        textSize="1rem"
+        padding="1rem 0 1rem 0"
+        source={connectExample}
+        lang="javascript"
+      />
+    </Slide>
+  );
+}
+
 function reduxConnectSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
@@ -253,6 +275,7 @@ function reduxConnectSlide() {
     </Slide>
   );
 }
+
 function reduxProviderSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
@@ -303,6 +326,18 @@ function reduxExampleSlide() {
         href="https://codesandbox.io/s/strange-rgb-vbe99"
       >
         To Do App Example 🔗
+      </Link>
+    </Slide>
+  );
+}
+function reduxCounterExampleSlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      <Link
+        textColor="secondary"
+        href="https://codesandbox.io/s/redux-counter-hooks-urtpe"
+      >
+        Counter App Example 🔗
       </Link>
     </Slide>
   );

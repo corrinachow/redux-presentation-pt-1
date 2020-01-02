@@ -1,18 +1,15 @@
 import React from "react";
 import { Notes } from "spectacle";
-import reduxNotes from "./redux-intro.md";
-// import declarativeComponentNotes from "./declarative-component.md";
-// import declativeImperativeComponentNotes from "./imperative-declarative-comparison.md";
-// import declarativeButtonDemoNotes from "./declarative-button-demo.md";
-import predictacleCentralisedNotes from "./predictable-centralised.md";
-import reducerNotes from "./reducer.md";
-import stateNotes from "./state.md";
-import actionNotes from "./action.md";
-import storeNotes from "./store.md";
-import storeMethodsNotes from "./store-methods.md";
-import reduxConnectNotes from "./redux-connect.md";
-import reduxProviderNotes from "./redux-provider.md";
-import thunkNotes from "./thunk.md";
+import reduxNotes from "./notes/redux-intro.md";
+import predictacleCentralisedNotes from "./notes/predictable-centralised.md";
+import reducerNotes from "./notes/reducer.md";
+import stateNotes from "./notes/state.md";
+import actionNotes from "./notes/action.md";
+import storeNotes from "./notes/store.md";
+import storeMethodsNotes from "./notes/store-methods.md";
+import reduxConnectNotes from "./notes/redux-connect.md";
+import reduxProviderNotes from "./notes/redux-provider.md";
+import thunkNotes from "./notes/thunk.md";
 
 const reduxIntro = <Notes>{reduxNotes}</Notes>;
 const predictacleCentralised = <Notes>{predictacleCentralisedNotes}</Notes>;
