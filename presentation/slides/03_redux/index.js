@@ -6,6 +6,8 @@ import reducerExample from "raw-loader!./examples/reducer.example";
 import stateExample from "raw-loader!./examples/state.example";
 import storeExample from "raw-loader!./examples/store.example";
 import useSelectorExample from "raw-loader!./examples/useSelector.example";
+import thunkExample from "raw-loader!./examples/thunk.example";
+
 import React from "react";
 import {
   Appear,
@@ -22,7 +24,8 @@ import {
   List,
   ListItem,
   Quote,
-  Slide
+  Slide,
+  Text
 } from "spectacle";
 import notes from "./notes";
 
@@ -40,7 +43,11 @@ export default [
         "A predictable state container for JavaScript apps"
       </Quote>
       <Cite margin="0 0 0 30px">
-        <Link textColor="secondary" href="https://redux.js.org/">
+        <Link
+          style={{ textDecoration: "underline" }}
+          textColor="secondary"
+          href="https://redux.js.org/"
+        >
           Redux
         </Link>
       </Cite>
@@ -56,8 +63,10 @@ export default [
   reduxUseSelectorSlide(),
   reduxCounterExampleSlide(),
   reduxSynchronousSlide(),
-  reduxSideEffectsSlide(),
-  reduxAsynchronousSlide()
+  reduxAsynchronousSlide(),
+  reduxThunkSlide(),
+  reduxTodoExampleSlide(),
+  reduxSummarySlide()
 ];
 
 function renderReduxLogo() {
@@ -299,7 +308,7 @@ function reduxProviderSlide() {
 
 function reduxSynchronousSlide() {
   return (
-    <Slide bgColor="#eee" textColor="primary">
+    <Slide bgColor="#ddd" textColor="primary">
       {notes.synchronousNotes}
       <Heading size={6} textColor="primaryVariant">
         Redux Synchronous Flow
@@ -310,7 +319,7 @@ function reduxSynchronousSlide() {
         </Fill>
         <Fill>
           <List textColor="primaryVariant">
-            <ListItem>Actions are dispatched synchronously by default</ListItem>
+            <p>Actions are dispatched synchronously by default</p>
           </List>
         </Fill>
       </Layout>
@@ -320,8 +329,8 @@ function reduxSynchronousSlide() {
 
 function reduxAsynchronousSlide() {
   return (
-    <Slide bgColor="#eee" textColor="primary">
-      {notes.asyncFlow}
+    <Slide bgColor="#ddd" textColor="primary">
+      {notes.thunk}
       <Heading size={6} textColor="primaryVariant">
         Redux Asynchronous Flow
       </Heading>
@@ -331,7 +340,14 @@ function reduxAsynchronousSlide() {
         </Fill>
         <Fill>
           <List textColor="primaryVariant">
-            <ListItem>Actions are dispatched synchronously by default</ListItem>
+            <p>
+              Asynchronous code (HTTP, timeouts) are known as
+              <b> side effects</b>
+            </p>
+            <p>
+              Middleware is required to handle side effects, such as{" "}
+              <code>redux-thunk</code>
+            </p>
           </List>
         </Fill>
       </Layout>
@@ -339,34 +355,28 @@ function reduxAsynchronousSlide() {
   );
 }
 
-function reduxSideEffectsSlide() {
+function reduxThunkSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
-      {notes.declarativeComponent}
-      <Heading size={6} textColor="primaryVariant">
-        React
-        {renderReactLogo()}
+      {notes.thunkActionCreator}
+      <Heading size={6} textColor="primary">
+        Redux Asynchronous Flow
       </Heading>
-      <Layout>
-        <Fill>
-          <Image height="350px" src={images.mvcDiagram} />
-        </Fill>
-        <Fill>
-          <List textColor="primaryVariant">
-            <ListItem>"V" in MVC</ListItem>
-            <ListItem>Declarative</ListItem>
-            <ListItem>Component based</ListItem>
-          </List>
-        </Fill>
-      </Layout>
+      <CodePane
+        textSize="1.5rem"
+        padding="1rem 0 1rem 0"
+        source={thunkExample}
+        lang="javascript"
+      />
     </Slide>
   );
 }
 
-function reduxExampleSlide() {
+function reduxTodoExampleSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
       <Link
+        style={{ textDecoration: "underline" }}
         textColor="secondary"
         href="https://codesandbox.io/s/strange-rgb-vbe99"
       >
@@ -375,16 +385,50 @@ function reduxExampleSlide() {
     </Slide>
   );
 }
+
 function reduxCounterExampleSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
       <Link
-        textSize="3rem"
+        style={{ textDecoration: "underline" }}
+        textSize="2rem"
         textColor="secondary"
         href="https://codesandbox.io/s/redux-counter-hooks-urtpe"
       >
         Counter App Example 🔗
       </Link>
+    </Slide>
+  );
+}
+
+function reduxSummarySlide() {
+  return (
+    <Slide bgColor="surfaceColor" textColor="primary">
+      {/* {notes.predictacleCentralised} */}
+      <Heading size={6} textColor="primary">
+        Why use Redux with React?
+      </Heading>
+      <List>
+        <Appear>
+          <ListItem textSize="1.5rem">Predictable state updates 🔮</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem textSize="1.5rem">Centralised state handling 📍</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem textSize="1.5rem">Time-travel debugging ⏱</ListItem>
+        </Appear>
+        <Appear>
+          <ListItem textSize="1.5rem">Hot module reloading 🔥</ListItem>
+        </Appear>
+      </List>
+      <Appear>
+        <Text textSize="2rem" textColor="secondary">
+          Redux allows for predictactable data flow and component architechture,
+          making understanding, developing, and debugging and application
+          easier, and consistent.
+        </Text>
+      </Appear>
     </Slide>
   );
 }

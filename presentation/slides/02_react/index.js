@@ -117,6 +117,7 @@ function declarativeButtonWalkthroughSlide() {
       padding="0 1rem"
       code={declarativeExample}
       textSize="2rem"
+      textColor="black"
       lang="javascript"
       ranges={[
         { loc: [0, 1], title: "Stateful Button" },
@@ -138,12 +139,14 @@ function declarativeButtonDemoSlide() {
       <Button />
       <CodePane
         textSize="1.5rem"
-        margin="5rem 0 5rem 0"
+        margin="2rem 0 2rem 0"
         source={declarativeExample}
         lang="javascript"
       />
       <Link
+        style={{ textDecoration: "underline" }}
         textColor="secondary"
+        textSize="1.5rem"
         href="https://codepen.io/corrinachow/pen/xxbOKxL"
       >
         CodePen 🔗
