@@ -32,7 +32,11 @@ export default [
         "A JavaScript Library for Building User Interfaces"
       </Quote>
       <Cite margin="0 0 0 30px">
-        <Link textColor="secondary" href="https://reactjs.org/">
+        <Link
+          textColor="secondary"
+          style={{ textDecoration: "underline" }}
+          href="https://reactjs.org/"
+        >
           React
         </Link>
       </Cite>

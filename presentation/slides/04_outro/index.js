@@ -16,7 +16,6 @@ import resourceMarkdown from "./resources.md";
 
 export default [
   <Slide bgColor="surfaceColor" align="flex-start center">
-    {/* {notes.resources} */}
     <Heading size={6} textColor="primary">
       Resources
     </Heading>

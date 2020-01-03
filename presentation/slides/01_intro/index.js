@@ -6,7 +6,7 @@ export default [
   <Slide bgColor="surfaceColor">
     {notes.intro}
     <Heading size={6} textColor="primary">
-      Up Framework Development with React and Redux 🚀
+      Development with React and Redux 🚀
     </Heading>
     <Text textColor="primary">Corrina Chow</Text>
     <Text textColor="primary">December 2019</Text>
