@@ -1,4 +1,7 @@
-**Declarative**: to have different views for each state of your application, React updates and renders the components when data changes
+**Declarative**:
+
+- Never interact with DOM
+- The UI is updated when the state (or descriptions of the UI) changes
 
 **Component based**: has encapsulated components that manage their own state, then compose them to make complex UIs
 
