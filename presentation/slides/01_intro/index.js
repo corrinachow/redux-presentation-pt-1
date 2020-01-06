@@ -22,10 +22,7 @@ function technologySlide() {
         Up Framework
       </Heading>
       <Layout>
-        <Image
-          width="100px"
-          src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png"
-        />
+        <Image width="100px" src="https://nodejs.org/static/images/logo.svg" />
         <Image
           width="75px"
           src="https://pbs.twimg.com/profile_images/1149708719178993664/3Hb8W4aX.png"

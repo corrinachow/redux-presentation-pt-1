@@ -404,7 +404,7 @@ function reduxCounterExampleSlide() {
 function reduxSummarySlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
-      {/* {notes.predictacleCentralised} */}
+      {notes.summary}
       <Heading size={6} textColor="primary">
         Why use Redux with React?
       </Heading>

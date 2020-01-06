@@ -14,6 +14,61 @@ import {
 import notes from "./notes";
 import resourceMarkdown from "./resources.md";
 
+const officialResources = {
+  title: "Official Info",
+  documents: [
+    { name: "React documentation", link: "https://reactjs.org/" },
+    { name: "Redux documentation", link: "https://redux.js.org/" },
+    {
+      name: "Redux Toolkit documentation",
+      link: "https://redux-toolkit.js.org/"
+    }
+  ]
+};
+
+const otherResources = {
+  title: "Other Resources",
+  documents: [
+    {
+      name: "React/Redux links",
+      link: "https://github.com/markerikson/react-redux-links"
+    },
+    {
+      name: "Understand MVC Architecture with React",
+      link:
+        "https://medium.com/createdd-notes/understanding-mvc-architecture-with-react-6cd38e91fefd"
+    }
+  ]
+};
+
+function makeResourceList(resources) {
+  const { title, documents } = resources;
+  return (
+    <>
+      <h3>{title}</h3>
+      <List>
+        {documents.map((documents, i) => {
+          const { link, name } = documents;
+          return (
+            <>
+              <ListItem key={i} textColor="primary" textSize="1.5rem">
+                <Link
+                  style={{ textDecoration: "underline" }}
+                  textSize="1.5rem"
+                  textColor="secondary"
+                  href={link}
+                >
+                  {name}
+                </Link>
+              </ListItem>
+            </>
+          );
+        })}
+      </List>
+    </>
+  );
+}
+
 export default [
   <Slide bgColor="surfaceColor" align="flex-start center">
     <Heading size={6} textColor="primary">
@@ -21,52 +76,8 @@ export default [
     </Heading>
     <Layout>
       <Fill>
-        <h3>Official Info</h3>
-        <List>
-          <ListItem textColor="primary" textSize="1.5rem">
-            <Link
-              style={{ textDecoration: "underline" }}
-              textSize="1.5rem"
-              textColor="secondary"
-              href="https://reactjs.org/"
-            >
-              React documentation
-            </Link>
-          </ListItem>
-          <ListItem textColor="primary" textSize="1.5rem">
-            <Link
-              style={{ textDecoration: "underline" }}
-              textSize="1.5rem"
-              textColor="secondary"
-              href="https://redux.js.org/"
-            >
-              Redux documentation
-            </Link>
-          </ListItem>
-        </List>
-        <h3>Other Resources</h3>
-        <List>
-          <ListItem textColor="primary" textSize="1.5rem">
-            <Link
-              style={{ textDecoration: "underline" }}
-              textSize="1.5rem"
-              textColor="secondary"
-              href="https://github.com/markerikson/react-redux-links"
-            >
-              React/Redux links
-            </Link>
-          </ListItem>
-          <ListItem textColor="primary" textSize="1.5rem">
-            <Link
-              style={{ textDecoration: "underline" }}
-              textSize="1.5rem"
-              textColor="secondary"
-              href="https://medium.com/createdd-notes/understanding-mvc-architecture-with-react-6cd38e91fefd"
-            >
-              Understand MVC Architecture with React
-            </Link>
-          </ListItem>
-        </List>
+        {makeResourceList(officialResources)}
+        {makeResourceList(otherResources)}
       </Fill>
       <Fill>
         <h3>Presentation Materials</h3>
