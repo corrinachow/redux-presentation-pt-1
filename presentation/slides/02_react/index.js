@@ -121,14 +121,16 @@ function declarativeButtonWalkthroughSlide() {
       padding="0 1rem"
       code={declarativeExample}
       textSize="2rem"
-      textColor="black"
       lang="javascript"
       ranges={[
         { loc: [0, 1], title: "Stateful Button" },
         { loc: [1, 2], note: "Initialises state" },
-        { loc: [5, 6], note: "Displays current colour" },
         {
-          loc: [6, 7],
+          loc: [7, 8],
+          note: "Uses `color` variable to apply background colour"
+        },
+        {
+          loc: [8, 9],
           note: "Sets an onClick event to toggle between colours"
         }
       ]}
@@ -140,13 +142,29 @@ function declarativeButtonDemoSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
       {notes.declarativeButtonDemo}
-      <Button />
-      <CodePane
-        textSize="1.5rem"
-        margin="2rem 0 2rem 0"
-        source={declarativeExample}
-        lang="javascript"
-      />
+      <Layout>
+        <Fill>
+          <div
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <Button />
+          </div>
+        </Fill>
+        <Fill>
+          <CodePane
+            textSize="1.5rem"
+            margin="2rem 0 2rem 0"
+            source={declarativeExample}
+            lang="javascript"
+          />
+        </Fill>
+      </Layout>
       <Link
         style={{ textDecoration: "underline" }}
         textColor="secondary"

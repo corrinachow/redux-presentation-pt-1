@@ -2,10 +2,14 @@ const Button = () => {
   const [color, setColor] = useState("Tomato");
 
   return (
-    <button>
+    <>
       <Heading>{color}</Heading>
-      <button onClick={() => setColor(color === "Tomato" ? "DodgerBlue" : "Tomato")}>
+      <button
+        style={{ background: color }}
+        onClick={() => setColor(color === "Tomato" ? "DodgerBlue" : "Tomato")}
+      >
         <span>Click me</span>
-    </button>
+      </button>
+    </>
   );
 };

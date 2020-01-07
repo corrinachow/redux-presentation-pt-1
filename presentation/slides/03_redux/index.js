@@ -191,7 +191,7 @@ function storeSlide() {
 function reduxMainMethodsSlide() {
   return (
     <Slide bgColor="surfaceColor" textColor="primary">
-      {notes.action}
+      {notes.storeMethods}
       <Heading size={6} textColor="primary">
         Stores have 3 main methods:
       </Heading>
@@ -254,7 +254,7 @@ function reduxUseSelectorSlide() {
       </Code>
 
       <CodePane
-        textSize="1rem"
+        textSize="1.5rem"
         padding="1rem 0 1rem 0"
         source={useSelectorExample}
         lang="javascript"

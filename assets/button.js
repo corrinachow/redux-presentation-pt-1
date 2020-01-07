@@ -15,7 +15,7 @@ const Button = () => {
           color: "#121212",
           padding: "0.5rem",
           marginTop: "1rem",
-          background: "#eee",
+          background: color,
           border: "none",
           borderRadius: "4px"
         }}
